@@ -1,0 +1,12 @@
+html,
+body {
+    display: flex;
+    height: 100%;
+    margin: 0;
+}
+
+.app {
+    margin-left: 0.5em;
+    width: 350px;
+    height: 100%;
+}
