@@ -18,8 +18,8 @@ describe('app', () => {
 
         require('../src/index')
 
-        expect(mockViewMessages).toBeCalledTimes(1)
-        expect(mockBlockAddMessage).toBeCalledTimes(1)
-        expect(mockObserveWithEventSource).toBeCalledTimes(1)
+        expect(mockViewMessages).toHaveBeenCalledTimes(1)
+        expect(mockBlockAddMessage).toHaveBeenCalledTimes(1)
+        expect(mockObserveWithEventSource).toHaveBeenCalledTimes(1)
     })
 })

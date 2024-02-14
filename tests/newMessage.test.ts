@@ -13,16 +13,16 @@ describe('newMessage', () => {
         const alert = jest.fn()
         window.alert = alert
         handleAddMessage()
-        expect(alert).toBeCalledTimes(1)
+        expect(alert).toHaveBeenCalledTimes(1)
 
         elemUserName.value = 'name'
         handleAddMessage()
-        expect(alert).toBeCalledTimes(2)
+        expect(alert).toHaveBeenCalledTimes(2)
 
         elemUserMessage.value = 'message'
         handleAddMessage()
-        expect(alert).toBeCalledTimes(2)
-        expect(mockSendMessage).toBeCalledTimes(1)
+        expect(alert).toHaveBeenCalledTimes(2)
+        expect(mockSendMessage).toHaveBeenCalledTimes(1)
         expect(elemUserMessage.value).toEqual('')
     })
 })

@@ -38,7 +38,7 @@ describe('messages', () => {
             },
         ])
         expect(document.body.innerHTML.includes(message)).toEqual(true)
-        expect(scrollTo).toBeCalledTimes(1)
+        expect(scrollTo).toHaveBeenCalledTimes(1)
 
         // ---
 
@@ -49,6 +49,6 @@ describe('messages', () => {
             now: Date.now(),
         })
         expect(document.body.innerHTML.includes(message2)).toEqual(true)
-        expect(scrollTo).toBeCalledTimes(2)
+        expect(scrollTo).toHaveBeenCalledTimes(2)
     })
 })
