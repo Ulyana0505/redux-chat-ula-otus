@@ -31,7 +31,7 @@ describe('messagesApi', () => {
             })),
         })
         observeWithEventSource()
-        expect(addEventListener).toBeCalledTimes(1)
+        expect(addEventListener).toHaveBeenCalledTimes(1)
     })
 
     it('handlerEventSource', () => {
@@ -50,13 +50,13 @@ describe('messagesApi', () => {
             },
         } as SourceData)
         handlerEventSource({ data: v1 } as MessageEvent)
-        expect(mockAddMessages).toBeCalledTimes(1)
+        expect(mockAddMessages).toHaveBeenCalledTimes(1)
 
         const v2 = JSON.stringify({
             path: '/00',
             data: { name: 'name', message: 'message', now: Date.now() },
         } as SourceData)
         handlerEventSource({ data: v2 } as MessageEvent)
-        expect(mockAddMessage).toBeCalledTimes(1)
+        expect(mockAddMessage).toHaveBeenCalledTimes(1)
     })
 })
