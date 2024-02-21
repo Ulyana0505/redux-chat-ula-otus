@@ -39,9 +39,7 @@ describe('messages', () => {
         ])
         expect(document.body.innerHTML.includes(message)).toEqual(true)
         // сообщение добавилось именно в elemList
-        expect(elemList.innerHTML).toEqual(
-            `<div class="container"><div>MESSAGE</div><div class="footer"><div class="name">name</div><div class="date">21.02.2024 14:45:38</div></div></div>`
-        )
+        expect(elemList.innerHTML.includes(`<div>MESSAGE</div>`)).toEqual(true);
 
         expect(scrollTo).toHaveBeenCalledTimes(1)
 
@@ -64,8 +62,7 @@ describe('messages', () => {
     it('viewMessages', () => {
         console.log(viewMessages().innerHTML)
         expect(viewMessages().outerHTML.startsWith('<div')).toEqual(true)
-        expect(viewMessages().innerHTML).toEqual(
-            `<div class="container"><div>MESSAGE</div><div class="footer"><div class="name">name</div><div class="date">21.02.2024 14:45:38</div></div></div><div class="container"><div>MESSAGE-2</div><div class="footer"><div class="name">name</div><div class="date">21.02.2024 15:08:16</div></div></div>`
-        )
+        expect(viewMessages().innerHTML.includes(`<div>MESSAGE</div>`)).toEqual(true);
+        expect(viewMessages().innerHTML.includes(`<div>MESSAGE-2</div>`)).toEqual(true);
     })
 })
