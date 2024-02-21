@@ -15,7 +15,7 @@ export function initSmileys(text: string) {
         )
 }
 
-export function viewMessage(data: MessageStruct) {
+export function initNewMessageForm(data: MessageStruct) {
     const div = document.createElement('div')
     div.classList.add(styles.container)
     const date =
@@ -29,14 +29,14 @@ export function viewMessage(data: MessageStruct) {
 }
 
 export function addMessage(data: MessageStruct) {
-    elemList.append(viewMessage(data))
+    elemList.append(initNewMessageForm(data))
     scrollToBottom()
 }
 
-export function addMessages(list: MessageStruct[]) {
+export function initMessageList(list: MessageStruct[]) {
     const frag = document.createDocumentFragment()
     for (const row of list) {
-        frag.append(viewMessage(row))
+        frag.append(initNewMessageForm(row))
     }
     elemList.append(frag)
     scrollToBottom()
@@ -47,7 +47,6 @@ export function scrollToBottom() {
 }
 
 export function viewMessages() {
-    const div = elemList
-    div.classList.add(styles.list)
-    return div
+    elemList.classList.add(styles.list)
+    return elemList
 }

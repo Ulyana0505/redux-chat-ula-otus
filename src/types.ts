@@ -1,7 +1,7 @@
 export type MessageStruct = {
     name: string
     message: string
-    now: number
+    now: number | Date
 }
 
 export type MessageSource = {

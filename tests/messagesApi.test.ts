@@ -35,8 +35,8 @@ describe('messagesApi', () => {
     })
 
     it('handlerEventSource', () => {
-        const mockAddMessages = jest
-            .spyOn(messages, 'addMessages')
+        const mockInitMessageList = jest
+            .spyOn(messages, 'initMessageList')
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
             .mockImplementation((_list: MessageStruct[]) => {})
         const mockAddMessage = jest
@@ -50,7 +50,7 @@ describe('messagesApi', () => {
             },
         } as SourceData)
         handlerEventSource({ data: v1 } as MessageEvent)
-        expect(mockAddMessages).toHaveBeenCalledTimes(1)
+        expect(mockInitMessageList).toHaveBeenCalledTimes(1)
 
         const v2 = JSON.stringify({
             path: '/00',
